@@ -23,9 +23,9 @@
 </head>
 
 <body class="font-[Lato,sans-serif]">
-    <header>
+    <header class="sticky top-0 z-10">
         <nav>
-            <div class="navbar bg-base-100 shadow-sm h-[50px]">
+            <div class="navbar bg-base-100 shadow-sm">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -37,15 +37,9 @@
                         </div>
                         <ul tabindex="0"
                             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul class="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            <li><a>Home</a></li>
+                            <li><a>Shop</a></li>
+                            <li><a>Contact</a></li>
                         </ul>
                     </div>
                     <div class="flex items-center gap-2">
@@ -71,6 +65,22 @@
             </div>
         </nav>
     </header>
+    <main>
+        <div class="mt-10 lg:mt-20">
+            <div class="text-center space-y-6">
+                <div class="flex items-center justify-center">
+                    <h4 class="font-bold text-2xl text-[rgba(19,19,19,0.6)]">Bringing Families Together</h4> <span class="ml-1">❤️‍🔥</span> 
+                </div>
+            
+                <h1 class="font-black text-3xl lg:text-7xl text-[#131313]">Your Path to Adoption <br> Starts Here</h1>
+                <p class="text-[#131313] w-[250px] lg:w-[50%] mx-auto">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+                <button class="btn text-white bg-[#0E7A81] rounded-lg">View More</button>
+            </div>
+            <div class="flex justify-center">
+                <img src="images/pet.webp" alt="">
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
