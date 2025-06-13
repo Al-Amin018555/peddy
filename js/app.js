@@ -28,23 +28,69 @@ const adoption = (adoptedPet) => {
     chosenPet.appendChild(div);
 }
 
+const loadDetails = async(petId) =>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
+    const data = await res.json();
+    console.log(data.petData)
+    // displayDetails(data.petData);
+    const detailsContainer = document.getElementById('modal-content');
+    detailsContainer.innerHTML = `
+    
+        <img class="w-full mb-6" src="${data.petData.image}"/>
+        <p class="font-[Inter,sans-serif] font-bold text-2xl mb-4"> ${data.petData.pet_name} </p>
+        <div class="space-y-4 grid grid-cols-2">
+        <div class="flex gap-2">
+            <img src="images/breed.jpg"/>
+            <p> Breed : ${data.petData.breed} </p>
+        </div>
+        <div class="flex gap-2">
+            <img src="images/birth.jpg"/>
+            <p> Birth : ${data.petData.date_of_birth} </p>
+        </div>
+        <div class="flex gap-2">
+            <img src="images/gender.jpg"/>
+            <p> Gender : ${data.petData.gender} </p>
+        </div>
+        <div class="flex gap-2">
+            <img src="images/price.jpg"/>
+            <p> Price : ${data.petData.price} </p>
+        </div>
+        <div class="flex gap-2">
+            <img src="images/vaccinated.jpg"/>
+            <p> Price : ${data.petData.vaccinated_status} </p>
+        </div>
+        </div>
+        <div class="divider"></div>
+        <div>
+            <p class="font-[Inter,sans-serif] font-semibold"> Details Information </p>
+            <p class="font-[Inter,sans-serif] text-[rgba(19,19,19,0.7)]"> ${data.petData.pet_details} </p>
+        </div>
+        
+   
+    `;
+   
+    document.getElementById('customModal').showModal()
+
+}
+
+// const displayDetails = (pet) => {
+//     console.log(pet)
+//     const detailsContainer = document.getElementById('modal-content');
+//     detailsContainer.innerHTML = `
+    
+//         <img class="w-full" src="${pet.image}"/>
+   
+//     `;
+   
+//     document.getElementById('customModal').showModal()
+// }
+
 const showAllPets = async (categoryName = 'pets' ) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/peddy/${categoryName}`);
     const data = await res.json();
     // console.log(categoryName)
     let currentData;
     categoryName === 'pets' ? currentData = data.pets : currentData = data.data;
-    // console.log(currentData.length)
-    // if(currentData.length <= 0){
-    //     const card = document.getElementById('pet-cards');
-    //     const div = document.createElement('div');
-    //     div.innerHTML = `
-    //      <h1 class="border-2 text-7xl"> hello </h1>
-    //     `;
-    //     card.appendChild(div);
-    //     return;
-        
-    // }
     const card = document.getElementById('pet-cards');
     card.innerHTML = "";
     currentData.forEach(pet => {
@@ -78,7 +124,7 @@ const showAllPets = async (categoryName = 'pets' ) => {
             <div class="card-actions flex justify-between">
              <button class="btn w-[90px]"><img class="w-5" src="images/likee.png"/></button>
              <button onclick="adoption('${pet.image}')" class="btn font-bold text-[18px] w-[90px] text-[#0E7A81]">Adopt</button>
-             <button class="btn font-bold text-[18px] w-[90px] text-[#0E7A81]">Details</button>
+             <button onclick="loadDetails('${pet.petId}')" class="btn font-bold text-[18px] w-[90px] text-[#0E7A81]">Details</button>
             </div>
             </div>
             
