@@ -73,26 +73,31 @@ const loadDetails = async(petId) =>{
 
 }
 
-// const displayDetails = (pet) => {
-//     console.log(pet)
-//     const detailsContainer = document.getElementById('modal-content');
-//     detailsContainer.innerHTML = `
-    
-//         <img class="w-full" src="${pet.image}"/>
-   
-//     `;
-   
-//     document.getElementById('customModal').showModal()
-// }
-
 const showAllPets = async (categoryName = 'pets' ) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/peddy/${categoryName}`);
     const data = await res.json();
-    // console.log(categoryName)
     let currentData;
     categoryName === 'pets' ? currentData = data.pets : currentData = data.data;
     const card = document.getElementById('pet-cards');
     card.innerHTML = "";
+    if(currentData.length == 0){
+        card.classList.remove('grid')
+        const div = document.createElement('div');
+        div.classList.add('space-y-6','flex','flex-col','justify-center','text-center');
+        div.innerHTML = `
+        <img class="w-[150px] mx-auto" src ="images/no-data.jpg"/>
+        <h3 class="font-[Inter,sans-serif] text-[#131313] font-bold text-2xl lg:text-3xl"> No Information Available </h3>
+        <p class ="text-[rgba(19,19,19,0.7)] w-[200px] mx-auto lg:w-[636px]">It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+        its layout. The point of using Lorem Ipsum is that it has a. </p>
+        
+        `;
+       
+         card.classList.add('bg-[rgba(19,19,19,0.03)]','py-[50px]','lg:py-[100px]');
+         card.appendChild(div)
+         return
+    }
+    card.classList.add('grid');
+    card.classList.remove('bg-[rgba(19,19,19,0.03)]','py-[50px]','lg:py-[100px]');
     currentData.forEach(pet => {
         const card = document.getElementById('pet-cards');
         const div = document.createElement('div');
