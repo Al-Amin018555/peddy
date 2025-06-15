@@ -108,22 +108,22 @@ const showAllPets = async (categoryName = 'pets' ) => {
                  src="${pet.image}" class="rounded-lg" />
              </figure>
             <div class="card-body p-0 mt-6">
-            <h2 class="font-[Inter,sans-serif] font-bold text-[#131313] text-[20px]">${pet.pet_name}</h2>
+            <h2 class="font-[Inter,sans-serif] font-bold text-[#131313] text-[20px]">${pet.pet_name ? pet.pet_name : 'Not Available'}</h2>
             <div class="space-y-2 mt-2"> 
                 <div class="flex gap-2"> 
                 <img src="images/breed.jpg"/>
-                 <p class="text-[rgba(19,19,19,0.7)]"> Breed: ${pet.breed} </p>
+                 <p class="text-[rgba(19,19,19,0.7)]"> Breed: ${pet.breed ? pet.breed : 'Not Available'} </p>
                  </div>
                 <div class="flex gap-2"> 
                 <img src="images/birth.jpg"/> 
-                <p class="text-[rgba(19,19,19,0.7)]"> Birth: ${pet.date_of_birth}  </p> 
+                <p class="text-[rgba(19,19,19,0.7)]"> Birth: ${pet.date_of_birth ? pet.date_of_birth :'Not Available'}  </p> 
                 </div>
                 <div class="flex gap-2"> 
                 <img src="images/gender.jpg"/> 
-                <p class="text-[rgba(19,19,19,0.7)]"> Gender: ${pet.gender} </p> </div>
+                <p class="text-[rgba(19,19,19,0.7)]"> Gender: ${pet.gender ? pet.gender : 'Not Available'} </p> </div>
                 <div class="flex gap-2">
                  <img src="images/price.jpg"/> 
-                 <p class="text-[rgba(19,19,19,0.7)]"> Price: ${pet.price} </p> </div>
+                 <p class="text-[rgba(19,19,19,0.7)]"> Price: ${pet.price ? pet.price :'Not Available'} </p> </div>
             </div>
             <div class="divider m-0"></div>
             <div class="card-actions flex justify-between">
