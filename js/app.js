@@ -53,11 +53,11 @@ const loadDetails = async(petId) =>{
         </div>
         <div class="flex gap-2">
             <img src="images/price.jpg"/>
-            <p> Price : ${data.petData.price} </p>
+            <p> Price : ${data.petData.price}$ </p>
         </div>
         <div class="flex gap-2">
             <img src="images/vaccinated.jpg"/>
-            <p> Price : ${data.petData.vaccinated_status} </p>
+            <p> Vaccinated Status : ${data.petData.vaccinated_status} </p>
         </div>
         </div>
         <div class="divider"></div>
