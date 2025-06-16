@@ -39,24 +39,24 @@ const loadDetails = async(petId) =>{
         <img class="w-full mb-6" src="${data.petData.image}"/>
         <p class="font-[Inter,sans-serif] font-bold text-2xl mb-4"> ${data.petData.pet_name} </p>
         <div class="space-y-4 grid grid-cols-2">
-        <div class="flex gap-2">
-            <img src="images/breed.jpg"/>
+        <div class="flex items-center gap-2">
+            <img class="w-[30px] h-[30px]" src="images/breed.jpg"/>
             <p> Breed : ${data.petData.breed} </p>
         </div>
-        <div class="flex gap-2">
-            <img src="images/birth.jpg"/>
+        <div class="flex items-center gap-2">
+            <img class="w-[30px] h-[30px]" src="images/birth.jpg"/>
             <p> Birth : ${data.petData.date_of_birth} </p>
         </div>
-        <div class="flex gap-2">
-            <img src="images/gender.jpg"/>
+        <div class="flex items-center gap-2">
+            <img class="w-[30px] h-[30px]" src="images/gender.jpg"/>
             <p> Gender : ${data.petData.gender} </p>
         </div>
-        <div class="flex gap-2">
-            <img src="images/price.jpg"/>
+        <div class="flex items-center gap-2">
+            <img class="w-[30px] h-[30px]" src="images/price.jpg"/>
             <p> Price : ${data.petData.price}$ </p>
         </div>
-        <div class="flex gap-2">
-            <img src="images/vaccinated.jpg"/>
+        <div class="flex items-center gap-2">
+            <img class="w-[30px] h-[30px]" src="images/vaccinated.jpg"/>
             <p> Vaccinated Status : ${data.petData.vaccinated_status} </p>
         </div>
         </div>
