@@ -163,6 +163,15 @@ const showAllPets = async (categoryName = 'pets') => {
         card.appendChild(div);
     })
 }
-
+const viewMoreButton = document.getElementById('viewMoreBtn');
+viewMoreButton.addEventListener('click',() =>{
+    const adoptSection = document.getElementById('adoptSection');
+    if(adoptSection){
+        adoptSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+});
 showCategories()
 showAllPets()
