@@ -28,7 +28,7 @@ const likedPet = (likePet) => {
     const div = document.createElement('div');
     div.classList.add('h-[200px]')
     div.innerHTML = `
-    <img class="" src = "${likePet}"/>
+    <img class="w-full h-full object-cover" src = "${likePet}"/>
     
     `;
     chosenPet.appendChild(div);
@@ -152,8 +152,8 @@ const showAllPets = async (categoryName = 'pets') => {
             <div class="divider m-0"></div>
             <div class="card-actions flex justify-between">
              <button onclick="likedPet('${pet.image}')" class="btn w-[90px]"><img class="w-5" src="images/likee.png"/></button>
-             <button class="btn hover:bg-[#0e79813e] font-bold text-[18px] w-[90px] text-[#0E7A81]">Adopt</button>
-             <button onclick="loadDetails('${pet.petId}')" class="btn font-bold text-[18px] w-[90px] text-[#0E7A81]">Details</button>
+             <button class="btn hover:bg-[#0E7A81] hover:text-white font-bold text-[18px] w-[90px] text-[#0E7A81]">Adopt</button>
+             <button onclick="loadDetails('${pet.petId}')" class="btn  hover:bg-[#0E7A81] hover:text-white font-bold text-[18px] w-[90px] text-[#0E7A81]">Details</button>
             </div>
             </div>
             
